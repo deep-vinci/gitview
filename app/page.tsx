@@ -1,10 +1,9 @@
-import Image from "next/image";
-import SearchBar from "./ui/search-bar";
+import Search from "./ui/search/search";
 
 export default function Home() {
     return (
         <div>
-            <SearchBar />
+            <Search user="" />
         </div>
     );
 }
