@@ -3,7 +3,7 @@ import SearchButton from "./search-button";
 
 export default function Search({ user }: { user: string }) {
     return (
-        <div>
+        <div className="flex gap-2">
             <SearchBar user={user} />
             <SearchButton />
         </div>
