@@ -1,39 +1,25 @@
-"use client";
-
-import { motion } from "motion/react";
-
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Search({ user }: { user: string }) {
-    const [isOn, setIsOn] = useState(false);
-
-    function showSearch() {
-        setIsOn(!isOn);
-    }
-
-    const searchBarStyle = {
-        width: 0,
-    };
+    const [userInput, setUserInput] = useState("");
 
     return (
-        <motion.div className="flex bg-white rounded-2xl p-2">
-            {isOn ? (
-                <div>
-                    <input
-                        className="px-5 py-2 bg-transparent outline-0"
-                        placeholder="Enter your username"
-                        defaultValue={user}
-                    />
-                </div>
-            ) : (
-                ""
-            )}
-            <button
-                onClick={showSearch}
-                className="bg-radial rounded-2xl shadow-[0px_6px_5px__rgba(0,0,0,0.3)] from-black to-gray-500 text-white px-5 py-2"
-            >
-                Search
-            </button>{" "}
-        </motion.div>
+        <div className="flex bg-white rounded-3xl p-2 shadow-sm">
+            <div>
+                <input
+                    className="outline-0 p-2"
+                    spellCheck="false"
+                    placeholder="Enter your username"
+                    onChange={(e) => setUserInput(e.target.value)}
+                    defaultValue={user}
+                />
+            </div>
+            <Link href={`/${userInput}`}>
+                <button className="bg-radial rounded-2xl shadow-[0px_6px_5px__rgba(0,0,0,0.3)] from-black to-gray-500 text-white px-5 py-2 w-30 active:scale-[96%]">
+                    Search
+                </button>
+            </Link>
+        </div>
     );
 }
