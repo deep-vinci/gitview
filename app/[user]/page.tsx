@@ -1,10 +1,9 @@
-"use client";
-
-import { useParams } from "next/navigation";
 import Search from "../ui/search/search";
 
-export default function Page() {
-    const params = useParams<{ user: string }>();
+export default async function Page({ params }: { params: { user: string } }) {
+    const data = await fetch("https://api.vercel.app/blog");
+    const posts = await data.json();
+    console.log(posts);
 
     return (
         <div>
