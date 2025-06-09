@@ -1,18 +1,53 @@
-import Search from "../ui/search/search";
-import BoxScene from "../ui/threeDemo/box-scene";
+import { geist, instrument_Serif } from "../components/fonts";
+import Search from "../components/search/search";
+import Graph from "../components/model";
+import BoxScene from "../components/threeDemo/box-scene";
+import Image from "next/image";
+import fetchData from "../utils/data";
+import ContributionGrid from "../components/three-instanced-mesh";
+import { generateMockContributionData } from "../utils/mockData";
 
 export default async function Page({ params }: { params: { user: string } }) {
-    const data = await fetch("https://api.vercel.app/blog");
-    const posts = await data.json();
-    console.log(posts);
-
+    // const data = await fetch("https://api.vercel.app/blog");
+    // const posts = await data.json();
+    // console.log(posts);
+    // console.log(await fetchData());
+    // console.dir(await fetchData(), { depth: null });
+    let param = await params;
     return (
-        <div className="flex justify-center items-center flex-col h-[100vh] ">
-            <div className="w-min mb-10 mt-[-10rem]">
-                <Search user={params.user} />
-            </div>
-            <div className="flex justify-center">
-                <BoxScene />
+        <div className="w-full max-w-[1400px]  my-0 mx-auto h-[100vh] ">
+            {/* nav */}
+            {/* <div className="flex justify-start flex-row-reverse items-center gap-10 py-8">
+                <div className="w-12 h-12 ">
+                    <Image
+                        src="https://avatars.githubusercontent.com/u/1206493?v=4"
+                        width={500}
+                        height={500}
+                        alt="test"
+                        className="rounded-full shadow-sm"
+                    />
+                </div>
+                <div className="">
+                    <Search user={param.user} />
+                </div>
+
+                <div
+                    className={`${geist.className} font-bold text-6xl ml-0 mr-auto`}
+                >
+                    <h1>
+                        Hello,{" "}
+                        <span className={`${instrument_Serif.className} `}>
+                            {[await params.user]}
+                        </span>
+                    </h1>
+                </div>
+            </div> */}
+            <div className="flex justify-start gap-10">
+                {/* <BoxScene /> */}
+                {/* <Graph /> */}
+                {/* <ContributionGrid data={generateMockContributionData()} /> */}
+                {/* <Graph /> */}
+                <Graph username={await params.user} />
             </div>
         </div>
     );
