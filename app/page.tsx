@@ -1,8 +1,8 @@
 "use client";
 
-import Search from "./ui/search/search";
+import Search from "./components/search/search";
 import { motion } from "motion/react";
-import { geist, instrument_Serif } from "./ui/fonts";
+import { geist, instrument_Serif } from "./components/fonts";
 
 export default function Home() {
     return (
