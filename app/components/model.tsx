@@ -108,7 +108,7 @@ function Scene2({ username }: any) {
     );
 }
 
-export default function Graph({ username }: any) {
+export function Graph({ username }: any) {
     return (
         <div className="w-full h-[100vh] rounded-2xl canvasbg ">
             <Canvas camera={{ position: [10, 30, 50], fov: 50 }}>
@@ -141,6 +141,43 @@ export default function Graph({ username }: any) {
                     enableDamping={true}
                 />
                 <Stats showPanel={0} />
+            </Canvas>
+        </div>
+    );
+}
+
+export function ShareableGraph({ username }: any) {
+    return (
+        <div className="w-full h-50">
+            <Canvas camera={{ position: [10, 30, 50], fov: 40 }}>
+                <ambientLight intensity={0.3} />
+
+                <directionalLight
+                    castShadow
+                    position={[10, 10, 5]}
+                    intensity={1}
+                    shadow-mapSize-width={1024}
+                    shadow-mapSize-height={1024}
+                    shadow-camera-far={50}
+                    shadow-camera-left={-10}
+                    shadow-camera-right={10}
+                    shadow-camera-top={10}
+                    shadow-camera-bottom={-10}
+                />
+
+                <Environment preset="forest" />
+                <SoftShadows size={10} samples={30} focus={0.5} />
+                {/* <Scene /> */}
+                <Scene2 username={username} />
+                <mesh>
+                    <sphereGeometry args={[1, 10, 10]} />
+                    <meshBasicMaterial color="red" />
+                </mesh>
+                {/* <OrbitControls
+                    enablePan={true}
+                    enableRotate={true}
+                    enableDamping={true}
+                /> */}
             </Canvas>
         </div>
     );
