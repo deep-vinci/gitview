@@ -110,7 +110,7 @@ function Scene2({ username }: any) {
 
 export function Graph({ username }: any) {
     return (
-        <div className="w-full h-[100vh] rounded-2xl canvasbg ">
+        <div className="w-full h-[100vh] rounded-2xl ">
             <Canvas camera={{ position: [10, 30, 50], fov: 50 }}>
                 <ambientLight intensity={0.3} />
 
@@ -148,7 +148,7 @@ export function Graph({ username }: any) {
 
 export function ShareableGraph({ username }: any) {
     return (
-        <div className="w-full h-50">
+        <div className="w-full h-100">
             <Canvas camera={{ position: [10, 30, 50], fov: 40 }}>
                 <ambientLight intensity={0.3} />
 
