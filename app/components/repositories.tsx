@@ -6,21 +6,31 @@ import {
     CardHeader,
     CardTitle,
 } from "./ui/card";
-import { h1 } from "motion/react-client";
+// @ts-ignore
+import emoji from "emoji-dictionary";
 import Link from "next/link";
+
+function parseEmojiText(text: string): string {
+    return text.replace(/:([a-zA-Z0-9_+-]+):/g, (match, shortcode) => {
+        const unicode = emoji.getUnicode(`:${shortcode}:`);
+        return unicode || match;
+    });
+}
 
 export default function Repositories({ username }: any) {
     const { userData } = useUserData();
     const repos = userData?.repositories.nodes;
 
-    console.log("DASDS");
+    // console.log("23", parseEmojiText(" we :books:")); // Outputs: 📖
     return (
         <>
             {repos?.map((repo) => (
                 <Card key={repo.url}>
                     <CardHeader>
                         <CardTitle>{repo.name}</CardTitle>
-                        <CardDescription>{repo.description}</CardDescription>
+                        <CardDescription>
+                            {parseEmojiText(repo.description)}
+                        </CardDescription>
                         <CardAction>
                             <Link target="_blank" href={repo.url}>
                                 <div className="h-5 w-5">
