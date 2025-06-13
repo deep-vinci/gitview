@@ -13,11 +13,17 @@ import Repositories from "./repositories";
 import Image from "next/image";
 import { Card, CardDescription, CardHeader } from "./ui/card";
 import { useUserData } from "../context/UserDataContext";
+import { Avatar, AvatarFallback } from "./ui/avatar";
+import { AvatarImage, Fallback } from "@radix-ui/react-avatar";
+import { Search } from "lucide-react";
+import { Skeleton } from "./ui/skeleton";
 
 export default function SideBar() {
     const [userInput, setUserInput] = useState("");
     const { model, setModel } = useModel();
     const { userData, fetchData } = useUserData();
+
+    const isLoading = !userData;
 
     // w-100 h-[100vh] flex flex-col
     return (
@@ -33,11 +39,21 @@ export default function SideBar() {
 
             <div className="w-full p-3 flex flex-col gap-3">
                 <Form action="" className="flex flex-col gap-3">
-                    <Input
-                        type="text"
-                        placeholder="Search username"
-                        onChange={(e) => setUserInput(e.target.value)}
-                    />
+                    <div className="flex gap-3">
+                        <Avatar>
+                            {isLoading ? (
+                                <Skeleton className="w-10 h-10 rounded-full" />
+                            ) : (
+                                <AvatarImage src={userData.avatarUrl} />
+                            )}
+                            {/* <AvatarFallback>    </AvatarFallback> */}
+                        </Avatar>
+                        <Input
+                            type="text"
+                            placeholder={userData?.login}
+                            onChange={(e) => setUserInput(e.target.value)}
+                        />
+                    </div>
                     <Link href={`/${userInput}`}>
                         <Button
                             className="w-full"
@@ -52,7 +68,16 @@ export default function SideBar() {
             {/* repo */}
             <p className="pl-3 text-sm font-bold">Repositories</p>
             <div className="mask-b-from-70% w-full h-200 gap-3 scroll-my-1.5 p-3 flex flex-col md:overflow-auto md:relative">
-                <Repositories username={userData?.login} />
+                {isLoading ? (
+                    <div className="flex flex-col gap-3">
+                        <Skeleton className="w-full h-20 rounded-lg" />
+                        <Skeleton className="w-full h-15 rounded-lg" />
+                        <Skeleton className="w-full h-20 rounded-lg" />
+                        <Skeleton className="w-full h-20 rounded-lg" />
+                    </div>
+                ) : (
+                    <Repositories username={userData?.login} />
+                )}
             </div>
 
             <div className="w-full p-3 flex flex-col  gap-3 mt-auto">
