@@ -4,6 +4,27 @@ import Search from "./components/search/search";
 import { motion } from "motion/react";
 import { geist, instrument_Serif } from "./components/fonts";
 
+// export const metadata = {
+//     title: "My Cool Website",
+//     description: "This is a description of my cool website.",
+//     openGraph: {
+//         title: "My Cool Website",
+//         description: "Best place to learn stuff.",
+//         url: "https://mycoolwebsite.com",
+//         siteName: "MyCoolWebsite",
+//         images: [
+//             {
+//                 url: "https://mycoolwebsite.com/og-image.png",
+//                 width: 1200,
+//                 height: 630,
+//                 alt: "My Cool Website Banner",
+//             },
+//         ],
+//         locale: "en_US",
+//         type: "website",
+//     },
+// };
+
 export default function Home() {
     return (
         <div className="box-border p-3">
