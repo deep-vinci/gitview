@@ -11,7 +11,7 @@ export default function SwitchModel() {
             <Tabs defaultValue="account" className="w-[400px]">
                 <TabsList>
                     <TabsTrigger onClick={() => setModel("3d")} value="account">
-                        3d Graph
+                        3d map
                     </TabsTrigger>
                     <TabsTrigger
                         onClick={() => setModel("heat")}
