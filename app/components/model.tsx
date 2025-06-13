@@ -110,7 +110,7 @@ function Scene2({ username }: any) {
 
 export function Graph({ username }: any) {
     return (
-        <div className="w-full h-[100vh] rounded-2xl ">
+        <div className="h-full rounded-2xl ">
             <Canvas camera={{ position: [10, 30, 50], fov: 50 }}>
                 <ambientLight intensity={0.3} />
 
