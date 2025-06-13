@@ -10,7 +10,9 @@ import {
 import emoji from "emoji-dictionary";
 import Link from "next/link";
 
-function parseEmojiText(text: string): string {
+function parseEmojiText(text?: string): string {
+    if (!text || typeof text !== "string") return "";
+
     return text.replace(/:([a-zA-Z0-9_+-]+):/g, (match, shortcode) => {
         const unicode = emoji.getUnicode(`:${shortcode}:`);
         return unicode || match;
