@@ -22,8 +22,8 @@ export default function ShareButton({ username }: any) {
     return (
         <div className="flex gap-3">
             <Input
-                disabled
                 value={`${process.env.NEXT_PUBLIC_URL}/${username}`}
+                readOnly
             />
             <Button onClick={handleCopy}>
                 {copied ? (
