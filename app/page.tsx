@@ -28,7 +28,7 @@ import { geist, instrument_Serif } from "./components/fonts";
 export default function Home() {
     return (
         <div className="box-border p-3">
-            <div className="bg-gradient-to-t from-gray-200 to-gray-100 w-full h-[90vh] rounded-2xl flex text-shadow-lg items-center flex-col">
+            <div className="bg-gradient-to-t from-gray-200 to-gray-100 w-full h-[90dvh] rounded-2xl flex text-shadow-lg items-center flex-col">
                 <motion.div
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
@@ -66,20 +66,20 @@ export default function Home() {
                             </span>
                         </div>
                     </div>
-                    <p className=" text-7xl font-bold p-5">
+                    <h1 className=" text-4xl font-bold p-5 md:text-7xl">
                         Your{" "}
                         <span className={`${instrument_Serif.className}`}>
                             Github
                         </span>
-                    </p>
-                    <p className=" text-7xl font-bold">
+                    </h1>
+                    <h1 className=" text-4xl font-bold md:text-7xl">
                         Contribution in{" "}
                         <span className="bg-gradient-to-tr from-[#08872B] to-[#5FED83] text-transparent bg-clip-text">
                             3d
                         </span>
-                    </p>
+                    </h1>
 
-                    <p className="mt-5 w-150 text-center text-shadow-sm">
+                    <p className="mt-5 text-wrap text-center text-shadow-sm md:w-150">
                         Discover your GitHub impact in a{" "}
                         <span className=" font-bold">whole new dimension</span>.
                         Beyond the commit graph.
