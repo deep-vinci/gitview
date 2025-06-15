@@ -19,6 +19,7 @@ export async function GET(request: Request) {
                             bio
                             company
                             location
+                            createdAt
                             websiteUrl
                             twitterUsername
         

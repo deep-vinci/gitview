@@ -6,6 +6,7 @@ export interface UserData {
     company: string;
     location: string;
     websiteUrl: string;
+    createdAt: string;
     twitterUsername: string;
     followers: {
         totalCount: number;
