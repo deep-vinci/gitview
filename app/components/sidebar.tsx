@@ -44,7 +44,12 @@ export default function SideBar() {
                             {isLoading ? (
                                 <Skeleton className="w-10 h-10 rounded-full" />
                             ) : (
-                                <AvatarImage src={userData.avatarUrl} />
+                                <Link
+                                    target="_blank"
+                                    href={`https://github.com/${userData.login}`}
+                                >
+                                    <AvatarImage src={userData.avatarUrl} />
+                                </Link>
                             )}
                             {/* <AvatarFallback>    </AvatarFallback> */}
                         </Avatar>
