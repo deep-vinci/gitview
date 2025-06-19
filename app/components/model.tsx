@@ -140,7 +140,7 @@ export function Graph({ username }: any) {
                     enableRotate={true}
                     enableDamping={true}
                 />
-                <Stats showPanel={0} />
+                {/* <Stats  showPanel={0} /> */}
             </Canvas>
         </div>
     );
