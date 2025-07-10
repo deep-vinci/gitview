@@ -30,7 +30,7 @@ export default function RootLayout({
             <link rel="icon" href="/favicon.png" sizes="any" />
 
             <body
-                className={`${geistSans.variable} ${geistMono.variable} dark:bg-black antialiased mt-0`}
+                className={`${geistSans.variable} ${geistMono.variable} text-white dark:bg-black antialiased mt-0`}
             >
                 <ModelProvider>{children}</ModelProvider>
                 {/* sidebar */}
