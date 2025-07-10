@@ -5,7 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
 import SideBar from "../components/sidebar";
 import { ThemeProvider } from "../context/themeProvider";
 // import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
-
+import { Analytics } from "@vercel/analytics/next";
 export default async function Layout({
     children,
 }: {
