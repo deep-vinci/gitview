@@ -27,7 +27,7 @@ import { geist, instrument_Serif } from "./components/fonts";
 
 export default function Home() {
     return (
-        <div className="box-border p-3">
+        <div className="box-border ">
             <div className="bg-gradient-to-t from-gray-200 to-gray-100 w-full h-[90dvh] rounded-2xl flex text-shadow-lg items-center flex-col">
                 <motion.div
                     initial={{ scale: 0.8, opacity: 0 }}
