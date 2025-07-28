@@ -23,7 +23,7 @@ export default async function Layout({
                     <div className="w-full h-[50dvh] md:h-[100dvh]">
                         {children}
                     </div>
-                    <div className="w-full h-[50dvh] overflow-y-auto md:w-100 md:h-[100dvh] text-black dark:text-white`">
+                    <div className="w-full h-[50dvh] overflow-y-auto md:w-100 md:h-[100dvh] text-black`">
                         <SideBar />
                     </div>
                 </div>

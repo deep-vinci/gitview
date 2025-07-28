@@ -29,7 +29,7 @@ import Nav from "./components/nav";
 export default function Home() {
     return (
         <div className="box-border">
-            <div className=" w-full h-[100dvh] flex text-shadow-lg items-center flex-col bg-[url(/hero-bg.png)] bg-cover bg-black">
+            <div className=" w-full h-[100dvh] flex text-shadow-lg items-center flex-col bg-[url(/hero-bg.png)] bg-cover bg-black text-white">
                 <Nav />
                 <motion.div
                     initial={{ scale: 0.8, opacity: 0 }}
@@ -37,7 +37,7 @@ export default function Home() {
                     className={`${geist.className} text-center mt-30`}
                 >
                     <div className="flex justify-center">
-                        <div className="flex items-center justify-center w-max  px-1 py-0 pr-4 rounded-4xl gap-2 cursor-pointer">
+                        <div className="flex items-center justify-center w-max px-1 py-0 pr-4 rounded-4xl gap-2 cursor-pointer">
                             <span>
                                 <svg
                                     viewBox="0 0 960 960"
@@ -81,7 +81,7 @@ export default function Home() {
                         </span>
                     </h1>
 
-                    <p className="mt-5 text-wrap text-center text-shadow-sm md:w-150">
+                    <p className="mt-5 text-wrap text-center text-shadow-sm md:w-150 text-[#cacaca]">
                         Discover your GitHub impact in a{" "}
                         <span className=" font-bold">whole new dimension</span>.
                         Beyond the commit graph.
