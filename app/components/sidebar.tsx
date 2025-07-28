@@ -27,12 +27,12 @@ export default function SideBar() {
 
     // w-100 h-[100vh] flex flex-col
     return (
-        <div className="h-full flex flex-col">
+        <div className="h-full flex flex-col dark:bg-black">
             {/* topbar */}
-            <div className="p-3 flex items-center w-full">
+            <div className="p-3 flex items-center w-full dark:text-white">
                 <ModeToggle />
                 {/* <Button className="ml-auto mr-0">Share</Button> */}
-                <div className="ml-auto mr-0">
+                <div className="ml-auto mr-0 ">
                     <Share username={userData?.login} />
                 </div>
             </div>
@@ -71,10 +71,12 @@ export default function SideBar() {
             </div>
 
             {/* repo */}
-            <p className="pl-3 text-sm font-bold">Repositories</p>
+            <p className="pl-3 text-sm font-bold dark:text-white">
+                Repositories
+            </p>
             <div className="mask-b-from-70% w-full h-200 gap-3 scroll-my-1.5 p-3 flex flex-col md:overflow-auto md:relative">
                 {isLoading ? (
-                    <div className="flex flex-col gap-3">
+                    <div className="flex flex-col gap-3 dark:text-white">
                         <Skeleton className="w-full h-20 rounded-lg" />
                         <Skeleton className="w-full h-15 rounded-lg" />
                         <Skeleton className="w-full h-20 rounded-lg" />
@@ -86,7 +88,9 @@ export default function SideBar() {
             </div>
 
             <div className="w-full p-3 flex flex-col  gap-3 mt-auto">
-                <p className="text-sm font-bold">Github Widget</p>
+                <p className="text-sm font-bold dark:text-white">
+                    Github Widget
+                </p>
                 <Card className="p-0 relative">
                     <CardHeader>
                         {/* <CardDescription>Github</CardDescription> */}
