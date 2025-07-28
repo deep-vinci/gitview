@@ -16,7 +16,10 @@ export default function Nav() {
                     href={"https://github.com/deep-vinci/gitview"}
                     target="_blank"
                 >
-                    <Button variant={"secondary"} className="cursor-pointer">
+                    <Button
+                        variant={"secondary"}
+                        className="cursor-pointer bg-white text-black dark:bg-white dark:text-black"
+                    >
                         <svg
                             role="img"
                             viewBox="0 0 24 24"
