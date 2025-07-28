@@ -37,7 +37,7 @@ export default function Repositories({ username }: any) {
                             <Link target="_blank" href={repo.url}>
                                 <div className="h-5 w-5">
                                     <svg
-                                        className="fill-white"
+                                        className="fill-black dark:fill-white"
                                         role="img"
                                         viewBox="0 0 24 24"
                                         xmlns="http://www.w3.org/2000/svg"
